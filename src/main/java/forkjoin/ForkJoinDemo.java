@@ -1,6 +1,5 @@
 package forkjoin;
 
-import java.util.Locale;
 import java.util.concurrent.ForkJoinPool;
 
 public class ForkJoinDemo {

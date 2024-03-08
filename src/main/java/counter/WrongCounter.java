@@ -2,15 +2,10 @@ package counter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class WrongCounter implements Runnable {
   private static volatile int counter = 0;
   private static final int LIMIT = 1001;
-  private static final int THREAD_POOL_SIZE = 5;
-
-  private static final Object monitor = new Object();
 
   public static void main(String[] args) throws InterruptedException {
     List<Thread> threads = new ArrayList<>();
@@ -45,15 +40,11 @@ public class WrongCounter implements Runnable {
   }
 
   private synchronized void increaseCounter() {
-//    synchronized (monitor) {
-      counter++; // counter = counter + 1 -> 3 operations
-//    }
+    counter++;
   }
 
 
-  private void printCounter() {
-//    synchronized (monitor) {
+  private synchronized void printCounter() {
       System.out.println(Thread.currentThread().getName() + " : " + counter);
-//    }
   }
 }

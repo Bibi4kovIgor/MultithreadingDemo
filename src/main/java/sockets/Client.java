@@ -6,11 +6,14 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Client {
 
+    private static final Logger logger = Logger.getLogger(Client.class.getName());
     public static void sendMessage() {
+
 
 
         try (Socket socket = new Socket("localhost", 1234)) {
@@ -38,7 +41,7 @@ public class Client {
             sc.close();
         }
         catch (IOException e) {
-            e.printStackTrace();
+            logger.log(Level.WARNING, e, String::new);
         }
 
     }

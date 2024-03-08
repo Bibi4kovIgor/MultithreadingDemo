@@ -40,6 +40,7 @@ public class MatrixUtils {
    * Yoa are free to test it and apply
    * it output defined matrix
    * */
+  @SuppressWarnings("Not required")
   public static void printMatrix(int[][] result) {
     for (int[] row : result) {
       for (int element : row) {

@@ -4,9 +4,9 @@ import java.util.concurrent.RecursiveTask;
 
 public class Sum extends RecursiveTask<Long> {
 
-    private int low;
-    private int high;
-    private int[] array;
+    private final int low;
+    private final int high;
+    private final int[] array;
     public Sum(int[] array, int low, int high) {
         this.low = low;
         this.high = high;

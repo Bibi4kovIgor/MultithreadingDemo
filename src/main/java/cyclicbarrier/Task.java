@@ -4,7 +4,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 public class Task implements Runnable {
-    private CyclicBarrier cyclicBarrier;
+    private final CyclicBarrier cyclicBarrier;
 
     public Task(CyclicBarrier cyclicBarrier) {
         this.cyclicBarrier = cyclicBarrier;
