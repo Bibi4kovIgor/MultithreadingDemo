@@ -2,17 +2,15 @@ package thread;
 
 import lombok.SneakyThrows;
 
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
 public class SimpleThread {
     @SneakyThrows
     public static void main(String[] args) {
 
-//        AtomicInteger i = new AtomicInteger();
         Thread thread1 = new Thread(() -> {
-//            for (i.set(0); i.get() < 10; i.incrementAndGet()) {
             for (int i = 0; i < 10; i++) {
-
 
                 System.out.println("Thread 1 " + i);
                 try {
@@ -28,7 +26,7 @@ public class SimpleThread {
             @Override
             public void run() {
                 System.out.println(isAlive());
-//                System.out.println("Thread 2 is daemon " + isDaemon());
+
                 setPriority(8);
                 for (int i = 0; i < 10; i++) {
                     Thread.sleep(500);
@@ -66,9 +64,9 @@ public class SimpleThread {
         };
 
 
-        SimpleRunnable thread4 = new SimpleRunnable("Thread 4", 500);
-        MySimpleThread thread5 = new MySimpleThread();
-        thread5.setName("Thread 5");
+        SimpleRunnable thread4 = new SimpleRunnable("Thread 4", 500, 0);
+//        MySimpleThread thread5 = new MySimpleThread();
+//        thread5.setName("Thread 5");
 //        thread2.setDaemon(true);
 
 //        Runnable runnable = () -> System.out.println(Thread.currentThread().getName());
@@ -80,18 +78,18 @@ public class SimpleThread {
 //
 //        thread.start();
 
-        thread1.setPriority(8);
+//        thread1.setPriority(8);
 
         thread1.start();
         thread3.run();
         thread2.start();
         thread2_5.start();
         thread4.run();
-        thread5.start();
+//        thread5.start();
 
 
 //        System.out.println("Thread 2 is daemon " + thread2.isDaemon());
-        System.out.println("Thread 2 is alive " + thread2.isAlive());
+//        System.out.println("Thread 2 is alive " + thread2.isAlive());
 //
 //        executorService.shutdown();
 

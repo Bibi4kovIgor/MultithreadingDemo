@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ConcurrentCounter implements Runnable {
-    private ReentrantLock lock;
+    private final ReentrantLock lock;
     private static int counter = 0;
     private static final int limit = 1000;
     private static final int threadPoolSize = 5;

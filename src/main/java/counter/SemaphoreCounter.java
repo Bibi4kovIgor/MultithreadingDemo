@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
 public class SemaphoreCounter implements Runnable {
-    Semaphore semaphore;
+    private final Semaphore semaphore;
     private static int counter = 0;
     private static final int LIMIT = 1000;
     private static final int THREAD_POOL_SIZE = 5;

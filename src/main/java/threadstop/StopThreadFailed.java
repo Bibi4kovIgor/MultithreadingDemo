@@ -11,6 +11,8 @@ public class StopThreadFailed {
                 i++;
                 System.out.println(i);
             }
+
+
             // will be interpret by VM as:
             // if(!stopRequested) {
             //   while(true) {

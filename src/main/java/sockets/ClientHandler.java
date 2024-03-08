@@ -9,7 +9,6 @@ import java.net.Socket;
 public class ClientHandler implements Runnable, AutoCloseable{
     private final Socket clientSocket;
 
-    // Constructor
     public ClientHandler(Socket socket)
     {
         this.clientSocket = socket;
